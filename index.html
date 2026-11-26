@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Debugmastertee | Websites, web apps and Telegram bots</title>
+<meta name="description" content="Debugmastertee builds websites, web apps and Telegram bots for businesses. Based in Zimbabwe, working remotely with clients worldwide.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Debugmastertee | Websites, web apps and Telegram bots">
+<meta property="og:description" content="Websites, web apps and Telegram bots for businesses. Based in Zimbabwe, working remotely with clients worldwide.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💻%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:inherit}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--paper:#F4F7F3;--surface:#fff;--ink:#10241C;--muted:#4F6057;--line:#D3DCD5;--accent:#0E6B47;--accent-fg:#fff;
+--gold:#F2B705;--gold-fg:#10241C;--focus:#0E6B47;--bot:#E4ECE6;--inv:#10241C;--inv-fg:#F4F7F3;--field:#1B3A2E;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#0B1612;--surface:#12211B;--ink:#E9F1EC;--muted:#9DB0A6;--line:#26382F;--accent:#3CC495;--accent-fg:#06140E;--focus:#F2B705;--bot:#1C3128;--inv:#163026;--inv-fg:#E9F1EC;--field:#0B1612;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#0B1612;--surface:#12211B;--ink:#E9F1EC;--muted:#9DB0A6;--line:#26382F;--accent:#3CC495;--accent-fg:#06140E;--focus:#F2B705;--bot:#1C3128;--inv:#163026;--inv-fg:#E9F1EC;--field:#0B1612;color-scheme:dark}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px);scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Figtree,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:1.0625rem;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--paper);z-index:30}
+a{color:var(--accent)}
+:is(a,button,input,select,textarea):focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:"Bricolage Grotesque",Figtree,system-ui,sans-serif;line-height:1.1;margin:0;letter-spacing:-.02em}
+h1{font-weight:800;font-size:clamp(2.2rem,5.6vw,3.9rem)}
+h2{font-weight:800;font-size:clamp(1.7rem,3.6vw,2.4rem);margin-bottom:12px}
+h3{font-weight:600;font-size:1.3rem}
+p{margin:0}
+.muted{color:var(--muted)}
+
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--paper);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.logo{font-family:"Bricolage Grotesque",Figtree,sans-serif;font-weight:800;font-size:1.3rem;color:var(--ink);text-decoration:none}
+.nav{display:flex;align-items:center;gap:22px}
+.nav a.l{color:var(--muted);text-decoration:none;font-weight:500}
+.nav a.l:hover{color:var(--ink)}
+.btn{display:inline-block;padding:.75em 1.25em;border-radius:10px;font-family:inherit;font-size:1rem;font-weight:600;line-height:1.2;text-decoration:none;border:2px solid transparent;cursor:pointer;text-align:center}
+.btn.gold{background:var(--gold);color:var(--gold-fg)}
+.btn.gold:hover{filter:brightness(1.06)}
+.btn.ghost{border-color:var(--ink);color:var(--ink)}
+.btn.sm{padding:.55em 1em;font-size:.95rem}
+
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:72px 0 80px}
+.hero p.lead{font-size:1.2rem;color:var(--muted);max-width:52ch;margin:22px 0 30px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.phone{justify-self:center;width:min(330px,100%);background:var(--surface);border:1px solid var(--line);border-radius:28px;overflow:hidden}
+.ph-head{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.av{width:36px;height:36px;border-radius:50%;background:var(--accent);color:var(--accent-fg);display:grid;place-items:center;font-weight:600}
+.ph-head b{display:block;line-height:1.2}
+.ph-head small{color:var(--muted)}
+.ph-body{padding:16px;min-height:300px}
+.bub{margin:0 0 10px;padding:10px 14px;border-radius:16px;max-width:84%;font-size:.95rem;line-height:1.4;transition:opacity .4s,transform .4s}
+.bub.bot{background:var(--bot);border-bottom-left-radius:4px}
+.bub.me{background:var(--accent);color:var(--accent-fg);margin-left:auto;border-bottom-right-radius:4px}
+.bub.pend{opacity:0;transform:translateY(8px)}
+.cap{justify-self:center;text-align:center;font-size:.9rem;color:var(--muted);margin-top:10px}
+
+.sec{padding:72px 0;border-top:1px solid var(--line)}
+.sec .intro{max-width:60ch;margin-bottom:36px}
+.row{display:grid;grid-template-columns:260px 1fr;gap:12px 32px;padding:24px 0;border-top:1px solid var(--line)}
+.row:last-child{border-bottom:1px solid var(--line)}
+.row p{max-width:62ch}
+.row small{display:block;margin-top:8px;color:var(--muted);font-size:.92rem}
+
+.work{display:grid;grid-template-columns:1fr 1fr;gap:40px 40px}
+.proj{border-top:4px solid var(--accent);padding-top:18px}
+.proj .kind{color:var(--muted);font-size:.95rem;margin:4px 0 10px}
+.proj .stack{font-size:.92rem;color:var(--muted);margin-top:10px}
+
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;list-style:none;margin:0;padding:0}
+.steps li{border-top:1px solid var(--line);padding-top:16px}
+.steps b{display:block;font-family:"Bricolage Grotesque",Figtree,sans-serif;font-size:2rem;font-weight:800;color:var(--accent);line-height:1}
+.steps h3{margin:10px 0 6px;font-size:1.15rem}
+
+.about{display:grid;grid-template-columns:1.2fr .8fr;gap:48px}
+.about ul{margin:0;padding:0;list-style:none;display:grid;gap:14px}
+.about li{border-left:4px solid var(--gold);padding-left:14px}
+
+.contact{background:var(--inv);color:var(--inv-fg);border-radius:20px;padding:44px;display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:72px}
+.contact h2{color:inherit}
+.contact .sub{opacity:.85;margin-bottom:22px}
+.links{display:grid;gap:8px;margin-top:24px}
+.links a{color:var(--inv-fg)}
+.fld{display:grid;gap:14px}
+.fld label{display:grid;gap:6px;font-weight:500;font-size:.95rem}
+.fld input,.fld select,.fld textarea{font:inherit;color:var(--inv-fg);background:var(--field);border:1px solid rgba(255,255,255,.25);border-radius:10px;padding:.7em .85em;width:100%}
+.fld textarea{min-height:110px;resize:vertical}
+.fld :is(input,select,textarea):focus-visible{outline-color:var(--gold)}
+
+.stripe{height:6px;background:linear-gradient(90deg,#1A9A5B 0 25%,#FFD200 25% 50%,#D21034 50% 75%,#111 75%)}
+footer{padding:24px 0 32px;color:var(--muted);font-size:.95rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+
+@media (max-width:860px){
+.hero,.about,.contact{grid-template-columns:1fr}
+.hero{gap:36px;padding:48px 0 56px}
+.work{grid-template-columns:1fr}
+.steps{grid-template-columns:1fr 1fr}
+.row{grid-template-columns:1fr}
+.nav a.l{display:none}
+.contact{padding:28px 22px}
+.sec{padding:56px 0}
+}
+@media (max-width:480px){.steps{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bub{transition:none}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap bar">
+    <a class="logo" href="#top">Debugmastertee</a>
+    <nav class="nav" aria-label="Main">
+      <a class="l" href="#services">Services</a>
+      <a class="l" href="#work">Work</a>
+      <a class="l" href="#process">Process</a>
+      <a class="l" href="#contact">Contact</a>
+      <a class="btn gold sm" data-wa="Hi Debugmastertee, I’d like to talk about a project." href="#contact">WhatsApp me</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div>
+      <h1>I build websites, web apps and Telegram bots for businesses that sell on WhatsApp.</h1>
+      <p class="lead">I’m Tamuka of Debugmastertee, a web developer in Zimbabwe. I work remotely with clients worldwide. You get a fast site or app that sends customers straight to your phone.</p>
+      <div class="cta">
+        <a class="btn gold" data-wa="Hi Debugmastertee, I’d like a quote for a project." href="#contact">Get a quote on WhatsApp</a>
+        <a class="btn ghost" href="#work">See my work</a>
+      </div>
+    </div>
+    <div>
+      <div class="phone" role="img" aria-label="Example conversation with a Telegram order bot">
+        <div class="ph-head"><span class="av" aria-hidden="true">U</span><div><b>Uniform shop bot</b><small>online</small></div></div>
+        <div class="ph-body">
+          <p class="bub me">Hi, is the navy work suit available in size L?</p>
+          <p class="bub bot">Yes. 12 in stock. Pay in USD or ZiG?</p>
+          <p class="bub me">USD. Deliver to Avondale.</p>
+          <p class="bub bot">Order #1043 confirmed. Delivery tomorrow before 4 pm.</p>
+        </div>
+      </div>
+      <p class="cap">Example of an order bot I can build for you.</p>
+    </div>
+  </div>
+
+  <section class="sec" id="services">
+    <div class="wrap">
+      <div class="intro">
+        <h2>What I do</h2>
+        <p class="muted">Five services. Each one ends with something you can use the same day it launches.</p>
+      </div>
+      <div>
+        <div class="row"><h3>Business websites</h3><div><p>Fast, mobile-first sites for shops, schools, firms and personal brands. Visitors find what they need and message you in one tap.</p><small>HTML, CSS, JavaScript, Next.js</small></div></div>
+        <div class="row"><h3>Web apps</h3><div><p>Online stores, booking systems, dashboards, member areas and learning platforms, with logins, payments and admin screens.</p><small>Next.js, Supabase, Firebase, Python</small></div></div>
+        <div class="row"><h3>Telegram bots</h3><div><p>Bots that take orders, answer questions, send alerts and run tools for your team, all day and all night.</p><small>Python, python-telegram-bot, Gemini AI</small></div></div>
+        <div class="row"><h3>Social media management</h3><div><p>Content planning, posting and replies, so your pages stay active and your customers get answers.</p><small>Content calendars, scheduling, community replies</small></div></div>
+        <div class="row"><h3>Account recovery</h3><div><p>Locked out or hacked? I help you get back into accounts you own and secure them afterwards. You must be able to prove ownership.</p><small>Access recovery, two-step login setup, security checks</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="work">
+    <div class="wrap">
+      <div class="intro">
+        <h2>Recent work</h2>
+        <p class="muted">A selection of what I have built. Code is on <a href="https://github.com/tamukaburawa-star" target="_blank" rel="noopener">GitHub</a>.</p>
+      </div>
+      <div class="work">
+        <article class="proj">
+          <h3>T Marketplace</h3>
+          <p class="kind">Native Android app</p>
+          <p>A Facebook Marketplace-style app for Harare. Real-time messaging, USD and ZiG prices, seller trust signals, delivery and pickup filters, English and Shona.</p>
+          <p class="stack">Android, Firebase (Firestore, Auth, Storage)</p>
+        </article>
+        <article class="proj">
+          <h3>Corporate wear and uniforms website</h3>
+          <p class="kind">Business website</p>
+          <p>A site for a Zimbabwe corporate wear, uniforms and design company. Every page leads to a WhatsApp enquiry, with no price list to maintain.</p>
+          <p class="stack">HTML, CSS, JavaScript</p>
+        </article>
+        <article class="proj">
+          <h3>Telegram bot suite</h3>
+          <p class="kind">Telegram bot</p>
+          <p>A Python bot with AI replies, social media tools, video downloads, link scanning and admin logging.</p>
+          <p class="stack">Python, python-telegram-bot, yt-dlp, Gemini</p>
+        </article>
+        <article class="proj">
+          <h3>Driving theory quiz</h3>
+          <p class="kind">Web app</p>
+          <p>A quiz built from the Zimbabwe driving test question bank, hosted free on GitHub Pages. <a href="https://github.com/tamukaburawa-star/Driving-quiz-" target="_blank" rel="noopener">View the code</a>.</p>
+          <p class="stack">HTML, JavaScript, GitHub Pages</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="process">
+    <div class="wrap">
+      <div class="intro"><h2>How a project runs</h2><p class="muted">Four steps. You know what happens next at every stage.</p></div>
+      <ol class="steps">
+        <li><b>1</b><h3>You message me</h3><p class="muted">Tell me what you sell and what you want the site, app or bot to do.</p></li>
+        <li><b>2</b><h3>I send a scope and quote</h3><p class="muted">A written list of what you get, how long it takes and what it costs.</p></li>
+        <li><b>3</b><h3>I build and you review</h3><p class="muted">You see working previews on your phone and ask for changes.</p></li>
+        <li><b>4</b><h3>Launch and support</h3><p class="muted">Your project goes live. I stay available for fixes and updates.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec" id="about">
+    <div class="wrap about">
+      <div>
+        <h2>About Debugmastertee</h2>
+        <p class="muted" style="max-width:56ch">I’m Tamuka, the developer behind Debugmastertee, based in Zimbabwe. I build for businesses that sell through WhatsApp, Telegram and social media. I work remotely with clients worldwide, in English and Shona.</p>
+      </div>
+      <ul>
+        <li><b>Mobile first.</b> Most of your customers will open your site on a phone, so I design for the phone first.</li>
+        <li><b>Built for enquiries.</b> Every page sends people to WhatsApp, Telegram or email.</li>
+        <li><b>Written scope.</b> You agree what you are getting before I start.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="wrap" id="contact">
+    <div class="contact">
+      <div>
+        <h2>Tell me what you need</h2>
+        <p class="sub">Fill in the form. It opens WhatsApp with your message ready to send.</p>
+        <div class="links">
+          <a id="lnk-wa" href="#contact" target="_blank" rel="noopener">WhatsApp</a>
+          <a id="lnk-tg" href="#contact" target="_blank" rel="noopener">Telegram</a>
+          <a id="lnk-em" href="#contact">Email</a>
+          <a href="https://github.com/tamukaburawa-star" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="fld">
+        <label>Your name<input id="f-name" type="text" autocomplete="name"></label>
+        <label>What do you need?
+          <select id="f-need">
+            <option>A business website</option>
+            <option>A web app</option>
+            <option>A Telegram bot</option>
+            <option>Social media management</option>
+            <option>Account recovery</option>
+            <option>Something else</option>
+          </select>
+        </label>
+        <label>Details<textarea id="f-msg" placeholder="What does your business sell? When do you need it?"></textarea></label>
+        <a id="f-send" class="btn gold" href="#contact" target="_blank" rel="noopener">Send on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="stripe" aria-hidden="true"></div>
+<footer class="wrap">
+  <span>© <span id="yr">2026</span> Debugmastertee. Zimbabwe.</span>
+  <span>Remote work for clients worldwide.</span>
+</footer>
+
+<script>
+// Contact details. WhatsApp uses the full number with country code, no plus sign or spaces.
+var CONFIG = {
+  whatsapp: "263786569568",
+  telegram: "debugmasterteeee",
+  email: "tamukaburawa@gmail.com"
+};
+
+function wa(text){ return "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(text); }
+
+// Fixed-message buttons.
+document.querySelectorAll("[data-wa]").forEach(function(a){
+  a.href = wa(a.getAttribute("data-wa"));
+  a.target = "_blank"; a.rel = "noopener";
+});
+document.getElementById("lnk-wa").href = wa("Hi Debugmastertee, I’d like to talk about a project.");
+document.getElementById("lnk-tg").href = "https://t.me/" + CONFIG.telegram;
+document.getElementById("lnk-em").href = "mailto:" + CONFIG.email;
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+// The send link rebuilds on every edit, so a plain anchor works without form submission or popups.
+var nameEl = document.getElementById("f-name"),
+    needEl = document.getElementById("f-need"),
+    msgEl = document.getElementById("f-msg"),
+    sendEl = document.getElementById("f-send");
+function updateSend(){
+  var who = nameEl.value.trim();
+  var text = "Hi Debugmastertee, " + (who ? "I’m " + who + ". " : "") + "I need: " + needEl.value + "." + (msgEl.value.trim() ? "\n\n" + msgEl.value.trim() : "");
+  sendEl.href = wa(text);
+}
+[nameEl, needEl, msgEl].forEach(function(el){ el.addEventListener("input", updateSend); el.addEventListener("change", updateSend); });
+updateSend();
+
+// Hero chat: bubbles appear one by one on load. Skipped when the visitor prefers reduced motion.
+var bubbles = Array.prototype.slice.call(document.querySelectorAll(".bub"));
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  bubbles.forEach(function(b){ b.classList.add("pend"); });
+  bubbles.forEach(function(b, i){ setTimeout(function(){ b.classList.remove("pend"); }, 700 + i * 1100); });
+}
+</script>
+</body>
+</html>
